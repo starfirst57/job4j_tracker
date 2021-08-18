@@ -13,11 +13,9 @@ public class Jukebox {
     }
 
     public static void main(String[] args) {
-        Jukebox cheburashka = new Jukebox();
-        cheburashka.music(1);
-        Jukebox sleep = new Jukebox();
-        sleep.music(2);
-        Jukebox empty = new Jukebox();
-        empty.music(3);
+        Jukebox box = new Jukebox();
+        box.music(1);
+        box.music(2);
+        box.music(3);
     }
 }
