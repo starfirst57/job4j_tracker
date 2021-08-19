@@ -7,5 +7,5 @@ public class Engineer extends Profession {
 
     }
 
-    public void addWorkerToProject(Engineer engineer, Project project) { }
+    public void addWorkerToProject(Engineer engineer) { }
 }

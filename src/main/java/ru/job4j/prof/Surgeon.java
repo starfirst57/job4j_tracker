@@ -18,7 +18,7 @@ public class Surgeon extends Doctor {
         return workDirection;
     }
 
-    public void surgery(Surgeon name, Pacient pacient, String date) {
+    public void surgery(Surgeon name,  String date) {
 
     }
 }
