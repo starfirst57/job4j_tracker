@@ -16,8 +16,11 @@ public class Library {
         }
         books[3] = first;
         books[0] = fourth;
+        for (int index = 0; index < books.length; index++) {
+            System.out.println(books[index].getName() + " " + books[index].getPages());
+        }
         for (int i = 0; i < books.length; i++) {
-            if (books[i].getName().equals("Clean code")) {
+            if ("Clean code".equals(books[i].getName())) {
                 System.out.println(books[i].getName());
             }
         }
