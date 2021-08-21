@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.security.PublicKey;
 import java.util.Arrays;
 
 public class Tracker {
@@ -56,6 +57,17 @@ public class Tracker {
         if (index != -1) {
             items[index] = item;
             items[index].setId(id);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
+            items[size - 1] = null;
+            size--;
             return true;
         }
         return false;
