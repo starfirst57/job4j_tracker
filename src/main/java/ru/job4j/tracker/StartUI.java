@@ -54,9 +54,21 @@ public class StartUI {
                 int id = Integer.parseInt(scanner.nextLine());
                 Item item = tracker.findById(id);
                 if (item == null) {
-                    System.out.println("Заявка с данным id: " + id + "не найдена");
+                    System.out.println("Заявка с данным id: " + id + " не найдена");
                 } else {
                     System.out.println(item);
+                }
+            } else if (select == 5) {
+                System.out.println("=== Find item by name ===");
+                System.out.println("Enter name: ");
+                String name = scanner.nextLine();
+                Item[] items = tracker.findByName(name);
+                if (items.length > 0) {
+                    for (int i = 0; i < items.length; i++) {
+                        System.out.println(items[i]);
+                    }
+                } else {
+                    System.out.println("Заявки с именем: " + name + " не найдены");
                 }
             } else if (select == 6) {
                 run = false;
