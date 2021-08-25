@@ -6,25 +6,20 @@ public class UserStore {
         for (int i = 0; i < users.length; i++) {
             if (login.equals(users[i].getUsername())) {
                 tmp = users[i];
+                break;
             }
         }
-        if (tmp != null) {
-            if (tmp.getUsername().length() > 3) {
-                return tmp;
-            } else {
-                throw new UserInvalidException("User name less 3 characters");
-            }
-        } else {
+        if (tmp == null) {
             throw new UserNotFoundException("User not found");
         }
+        return tmp;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (user.isValid()) {
-            return true;
-        } else {
+        if (!user.isValid() || user.getUsername().length() < 3) {
             throw new UserInvalidException("User not valid");
         }
+        return true;
     }
 
     public static void main(String[] args) {
