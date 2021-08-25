@@ -61,7 +61,7 @@ public class StartUITest {
         assertThat(out.toString(), is("Menu." + System.lineSeparator()
                 + "0. Exit" + System.lineSeparator()
                 + "1. Show all items" + System.lineSeparator()
-                + item.toString() + System.lineSeparator()
+                + item + System.lineSeparator()
                 + "Menu." + System.lineSeparator()
                 + "0. Exit" + System.lineSeparator()
                 + "1. Show all items" + System.lineSeparator()));
@@ -71,7 +71,7 @@ public class StartUITest {
         Output out = new StubOutput();
         String name = "new item";
         Input in = new StubInput(
-                new String[] {"1", "new item", "0"}
+                new String[] {"1", name, "0"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
@@ -91,10 +91,10 @@ public class StartUITest {
     @Test
     public void whenFindByNameActionHasItem() {
         Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[] {"1", "new item", "0"}
-        );
         Item item = new Item("new item");
+        Input in = new StubInput(
+                new String[] {"1", item.getName(), "0"}
+        );
         Tracker tracker = new Tracker();
         tracker.add(item);
         UserAction[] actions = {
@@ -105,7 +105,7 @@ public class StartUITest {
                 + "0. Exit" + System.lineSeparator()
                 + "1. Find by name" + System.lineSeparator()
                 + "=== Find item by name ===" + System.lineSeparator()
-                + item.toString() + System.lineSeparator()
+                + item + System.lineSeparator()
                 + "Menu." + System.lineSeparator()
                 + "0. Exit" + System.lineSeparator()
                 + "1. Find by name" + System.lineSeparator()));
