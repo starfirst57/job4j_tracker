@@ -1,9 +1,7 @@
 package ru.job4j.tracker;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -136,12 +134,11 @@ public class StartUITest {
     @Test
     public void whenFindByIdActionHasItem() {
         Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[] {"1", "1", "0"}
-        );
-        Item item = new Item("new item");
         Tracker tracker = new Tracker();
-        tracker.add(item);
+        Item item = tracker.add(new Item("new item"));
+        Input in = new StubInput(
+                new String[] {"1", Integer.toString(item.getId()), "0"}
+        );
         UserAction[] actions = {
                 new ExitAction(), new FindByIdAction(out)
         };
@@ -150,7 +147,7 @@ public class StartUITest {
                 + "0. Exit" + System.lineSeparator()
                 + "1. Find item by id" + System.lineSeparator()
                 + "=== Find item by id ===" + System.lineSeparator()
-                + item.toString() + System.lineSeparator()
+                + item + System.lineSeparator()
                 + "Menu." + System.lineSeparator()
                 + "0. Exit" + System.lineSeparator()
                 + "1. Find item by id" + System.lineSeparator()));
