@@ -11,7 +11,7 @@ public class ValidateInput implements Input {
 
     @Override
     public String askStr(String question) {
-        return null;
+       return in.askStr(question);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class ValidateInput implements Input {
                 value = in.askInt(question);
                 invalid = false;
             } catch (NumberFormatException nfe) {
-                System.out.println("Please enter validate data again.");
+                out.println("Please enter validate data again.");
             }
         } while (invalid);
         return value;
