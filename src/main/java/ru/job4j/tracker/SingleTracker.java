@@ -12,17 +12,17 @@ public final class SingleTracker {
         return singletrack;
     }
 
-    private SingleTracker() {}
+    private SingleTracker() { }
 
     public Item add(Item item) {
         return tracker.add(item);
     }
 
     public Item findById(int id) {
-        return null;
+        return tracker.findById(id);
     }
 
-    public Item[] findByName(String name){
+    public Item[] findByName(String name) {
         return tracker.findByName(name);
     }
 
