@@ -3,9 +3,10 @@ package ru.job4j.tracker;
 import java.util.List;
 
 public final class SingleTracker {
+    private static SingleTracker singletrack = null;
     private Tracker tracker = new Tracker();
 
-    private static SingleTracker singletrack = null;
+    private SingleTracker() { }
 
     public SingleTracker getSingletrack() {
         if (singletrack == null) {
@@ -13,8 +14,6 @@ public final class SingleTracker {
         }
         return singletrack;
     }
-
-    private SingleTracker() { }
 
     public Item add(Item item) {
         return tracker.add(item);
