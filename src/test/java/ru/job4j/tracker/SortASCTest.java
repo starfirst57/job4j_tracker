@@ -38,7 +38,7 @@ public class SortASCTest {
         expected.add(new Item(3, "three"));
         expected.add(new Item(2,"two"));
         expected.add(new Item(1, "one"));
-        items.sort(new SortASC().reversed());
+        items.sort(new ReverseSort());
         assertEquals(expected, items);
     }
 }
