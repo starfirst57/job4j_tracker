@@ -18,8 +18,8 @@ public class StartUITest {
         List<UserAction> actions = List.of(new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Exit" + System.lineSeparator()
+                "Menu." + System.lineSeparator()
+                        + "0. Exit" + System.lineSeparator()
         ));
     }
 
@@ -60,6 +60,7 @@ public class StartUITest {
                 + "0. Exit" + System.lineSeparator()
                 + "1. Show all items" + System.lineSeparator()));
     }
+
     @Test
     public void whenFindByNameEmpty() {
         Output out = new StubOutput();
