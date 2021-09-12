@@ -18,3 +18,6 @@ notifications:
       - starfirst57@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
+env:
+  global:
+    -CODECOV_TOKEN="1efbdfdc-dab7-4cf8-af4a-63766ba6ae02"
