@@ -19,11 +19,12 @@ public class JobTest {
         jobs.add(new Job("c", 4));
         jobs.add(new Job("d", 3));
         jobs.add(new Job("b", 1));
-        List<Job> expected = new ArrayList<>();
-        expected.add(new Job("a", 2));
-        expected.add(new Job("b", 1));
-        expected.add(new Job("c", 4));
-        expected.add(new Job("d", 3));
+        List<Job> expected = List.of(
+                new Job("a", 2),
+                new Job("b", 1),
+                new Job("c", 4),
+                new Job("d", 3)
+        );
         jobs.sort(new SortAscByName());
         assertEquals(expected, jobs);
     }
@@ -35,11 +36,12 @@ public class JobTest {
         jobs.add(new Job("c", 4));
         jobs.add(new Job("d", 3));
         jobs.add(new Job("b", 1));
-        List<Job> expected = new ArrayList<>();
-        expected.add(new Job("d", 3));
-        expected.add(new Job("c", 4));
-        expected.add(new Job("b", 1));
-        expected.add(new Job("a", 2));
+        List<Job> expected = List.of(
+                new Job("d", 3),
+                new Job("c", 4),
+                new Job("b", 1),
+                new Job("a", 2)
+        );
         jobs.sort(new SortDescByName());
         assertEquals(expected, jobs);
     }
@@ -51,11 +53,12 @@ public class JobTest {
         jobs.add(new Job("c", 4));
         jobs.add(new Job("d", 3));
         jobs.add(new Job("b", 1));
-        List<Job> expected = new ArrayList<>();
-        expected.add(new Job("b", 1));
-        expected.add(new Job("a", 2));
-        expected.add(new Job("d", 3));
-        expected.add(new Job("c", 4));
+        List<Job> expected = List.of(
+                new Job("b", 1),
+                new Job("a", 2),
+                new Job("d", 3),
+                new Job("c", 4)
+        );
         jobs.sort(new SortAscByPriority());
         assertEquals(expected, jobs);
     }
@@ -67,11 +70,12 @@ public class JobTest {
         jobs.add(new Job("c", 4));
         jobs.add(new Job("d", 3));
         jobs.add(new Job("b", 1));
-        List<Job> expected = new ArrayList<>();
-        expected.add(new Job("c", 4));
-        expected.add(new Job("d", 3));
-        expected.add(new Job("a", 2));
-        expected.add(new Job("b", 1));
+        List<Job> expected = List.of(
+                new Job("c", 4),
+                new Job("d", 3),
+                new Job("a", 2),
+                new Job("b", 1)
+        );
         jobs.sort(new SortDescByPriority());
         assertEquals(expected, jobs);
     }
