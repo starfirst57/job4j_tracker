@@ -16,6 +16,7 @@ public class Analyze {
                 .flatMap(subj -> subj.getSubjects().stream())
                 .collect(
                         Collectors.groupingBy(Subject::getName,
+                                LinkedHashMap::new,
                                 Collectors.averagingDouble(Subject::getScore)
                         )
                 ).entrySet()
